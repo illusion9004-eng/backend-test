@@ -1,17 +1,23 @@
-package org.example.fruitshop.Entity;
+package org.example.fruitshop.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Product_List")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     @Column(nullable = false, length = 50)
-    private String username;
+    private String userName;
     @Column(nullable = false)
     private String productName;
     @Column(nullable = false)
